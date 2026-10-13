@@ -1,0 +1,27 @@
+contract_version: '1.0'
+skill_id: ''
+execution_id: ''
+status: PLANNED
+scope:
+  dsp_id: ''
+  ssp_id: ''
+  hu_ids: []
+inputs:
+  required: []
+  optional: []
+outputs: []
+provenance:
+  source_files: []
+  gitlab_references: []
+  generated_at: ''
+  generated_by: ''
+validation:
+  contract_valid: false
+  traceability_valid: false
+human_approval:
+  required: false
+  status: NOT_REQUIRED
+  decision_id: ''
+blockers: []
+open_questions: []
+next_actions: []

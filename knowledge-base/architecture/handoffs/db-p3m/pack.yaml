@@ -1,0 +1,277 @@
+# OKF v0.2 — development-context-pack. status: draft. Nunca se asigna `verified` desde este skill.
+okf_version: "0.2"
+schema: comsatel/development-context-pack/v1.0
+status: draft
+generated:
+  by: architecture-development-handoff
+  at: "2026-10-12T04:00:00-05:00"
+sources:
+  - id: wp-db-001
+    resource: "/data/WP-DB-001-plan-de-trabajo-diseno-bd.md"
+  - id: ddp-001
+    resource: "/data/DDP-001-descubrimiento-de-dominio.md"
+  - id: ddm-001
+    resource: "/data/DDM-001-modelo-ddd.md"
+  - id: ldm-001
+    resource: "/data/LDM-001-modelo-logico.md"
+  - id: icp-001
+    resource: "/data/ICP-001-contratos-de-integracion.md"
+  - id: pdm-001
+    resource: "/data/PDM-001-modelo-fisico-mysql.md"
+  - id: rpt-ddr-001
+    resource: "/data/RPT-DDR-001-revision-del-diseno.md"
+  - id: inf-p3m-001
+    resource: "/deployment/INF-P3M-001-arquitectura-de-infraestructura.md"
+  - id: asr-catalog
+    resource: "/architecture/asr/asr-catalog.md"
+  - id: cat-adr-001
+    resource: "/architecture/CAT-ADR-001-decisiones-de-arquitectura.md"
+  - id: adr-db-001
+    resource: "/architecture/adr/ADR-DB-001.md"
+  - id: adr-db-002
+    resource: "/architecture/adr/ADR-DB-002.md"
+  - id: adr-db-003
+    resource: "/architecture/adr/ADR-DB-003.md"
+  - id: brc-001
+    resource: "/business/rules/BRC-001-reglas-de-negocio-portal-curricula.md"
+  - id: imd-001
+    resource: "/business/information-model/IMD-001-portal-curricula.md"
+metadata:
+  product: "P3M (People, Product and Project Management)"
+  feature: "Capa de persistencia: 7 esquemas MySQL 8.x, migraciones Flyway, permisos y contratos entre contextos"
+  version: "1.0"
+  status: READY_FOR_REVIEW
+  created_at: "2026-10-12T04:00:00-05:00"
+  verified_at: ""
+scope:
+  user_stories:
+    - {id: US-001, summary: "Mantener el catálogo oficial de roles", context: "CTX-03", story_status: approved}
+    - {id: US-002, summary: "Definir el perfil de competencias de un rol", context: "CTX-03", story_status: approved}
+    - {id: US-003, summary: "Definir el nivel mínimo de cada competencia para un rol/nivel", context: "CTX-03", story_status: approved}
+    - {id: US-004, summary: "Registrar y modificar colaboradores", context: "CTX-01", story_status: approved}
+    - {id: US-005, summary: "Consultar los datos de los colaboradores", context: "CTX-01", story_status: approved}
+    - {id: US-006, summary: "Definir un curso con sus objetivos", context: "CTX-04", story_status: approved}
+    - {id: US-007, summary: "Definir la rúbrica de cada objetivo de un curso", context: "CTX-04", story_status: approved}
+    - {id: US-008, summary: "Crear una edición de un curso", context: "CTX-04", story_status: approved}
+    - {id: US-009, summary: "Enrolarse en una edición de un curso", context: "CTX-04", story_status: approved}
+    - {id: US-010, summary: "Desenrolarse de una edición de un curso", context: "CTX-04", story_status: approved}
+    - {id: US-011, summary: "Validar las evidencias aportadas en una edición de curso", context: "CTX-05 y CTX-04", story_status: approved}
+    - {id: US-012, summary: "Certificar a un colaborador en una edición de curso", context: "CTX-04", story_status: approved}
+    - {id: US-013, summary: "Registrar evidencias del logro de un objetivo en una edición", context: "CTX-05", story_status: approved}
+    - {id: US-014, summary: "Aportar evidencias de proyecto", context: "CTX-05", story_status: approved}
+    - {id: US-015, summary: "Validar las evidencias de proyecto", context: "CTX-05", story_status: approved}
+    - {id: US-016, summary: "Registrar la valoración de un colaborador", context: "CTX-05", story_status: approved}
+    - {id: US-017, summary: "Decidir la promoción de nivel o seniority de un colaborador", context: "CTX-05 y CTX-01", story_status: approved}
+    - {id: US-018, summary: "Registrar un producto y vincularlo a un proyecto de GitLab", context: "CTX-06", story_status: approved}
+    - {id: US-019, summary: "Registrar un proyecto de un producto con sus milestones", context: "CTX-06", story_status: approved}
+    - {id: US-020, summary: "Cargar automáticamente los datos de GitLab y consultar el registro de cargas", context: "CTX-07", story_status: approved}
+    - {id: US-021, summary: "Asignar un colaborador a un proyecto", context: "CTX-06", story_status: approved}
+    - {id: US-022, summary: "Aprobar la excepción de una asignación", context: "CTX-06", story_status: approved}
+    - {id: US-023, summary: "Mantener el codificador de motivos de excepción", context: "CTX-06", story_status: approved}
+    - {id: US-024, summary: "Visualizar los milestones e issues de GitLab de un proyecto", context: "CTX-07", story_status: approved}
+    - {id: US-025, summary: "Registrar al usuario autenticado al iniciar sesión", context: "CTX-02", story_status: approved}
+    - {id: US-026, summary: "Registrar la evaluación de desempeño de un colaborador", context: "CTX-05", story_status: approved}
+    - {id: US-029, summary: "Mantener los datos de contacto de las partes", context: "CTX-01", story_status: draft}
+    - {id: US-030, summary: "Mantener las plazas de una organización", context: "CTX-01", story_status: draft}
+    - {id: US-031, summary: "Mantener las ocupaciones de plaza", context: "CTX-01", story_status: draft}
+    - {id: US-032, summary: "Mantener los roles de la parte", context: "CTX-01", story_status: draft}
+    - {id: US-033, summary: "Corregir el vínculo entre un usuario y su persona", context: "CTX-02", story_status: draft}
+    - {id: US-034, summary: "Mantener las relaciones entre partes", context: "CTX-01", story_status: draft}
+    - {id: US-035, summary: "Registrar las organizaciones", context: "CTX-01", story_status: draft}
+  out_of_scope:
+    - {id: US-027, summary: "Ingresar al portal de forma segura", reason: "no usa la base de datos"}
+    - {id: US-028, summary: "Cerrar la sesión a demanda o por vencimiento", reason: "no usa la base de datos"}
+architecture:
+  affected_components:
+    - {component: "`p3m_partes` (CTX-01)", responsibility: "Partes y organización: parte, persona, organización, contactos, roles de la parte, relaciones, plazas y ocupaciones. 9 tablas"}
+    - {component: "`p3m_identidad` (CTX-02)", responsibility: "Usuario vinculado a Keycloak y corrección de vínculo. 3 tablas"}
+    - {component: "`p3m_curricula` (CTX-03)", responsibility: "Seniority, niveles, competencias, roles y rol/nivel. 8 tablas y semillas BR-011"}
+    - {component: "`p3m_formacion` (CTX-04)", responsibility: "Cursos, objetivos, rúbricas, evidencias esperadas, ediciones, enrolamientos y certificaciones. 7 tablas"}
+    - {component: "`p3m_progresion` (CTX-05)", responsibility: "Evidencias aportadas, valoraciones, evaluaciones de desempeño, solicitudes y promociones, y el outbox de EVT-01. 12 tablas"}
+    - {component: "`p3m_portafolio` (CTX-06)", responsibility: "Productos, proyectos, jefaturas, asignaciones, excepciones, motivos y fila de bloqueo por colaborador. 9 tablas"}
+    - {component: "`p3m_gitlab` (CTX-07)", responsibility: "Registro de cargas y réplica de solo lectura de milestones e issues. 3 tablas"}
+    - {component: "Servicio por contexto (nombre y número **por definir**)", responsibility: "Aplica las restricciones que la base no garantiza (R-014) y expone los contratos de ICP-001. FastAPI (ADR-07)"}
+    - {component: "Cuentas MySQL `flyway_<ctx>`, `svc_<ctx>`, `svc_gitlab_carga`, `svc_identidad_correccion`", responsibility: "Migraciones y acceso con mínimo privilegio"}
+    - {component: "RabbitMQ", responsibility: "Entrega de EVT-01 con outbox"}
+    - {component: "Keycloak (federado con Active Directory) y GitLab", responsibility: "Capas anticorrupción ACL-01 y ACL-02"}
+  asrs:
+    - {id: ASR-03, requirement: "Roles de usuario en Keycloak; el portal registra al usuario al iniciar sesión", disposition: PENDIENTE}
+    - {id: ASR-04, requirement: "Integración con GitLab de solo lectura", disposition: PENDIENTE}
+    - {id: ASR-05, requirement: "Carga automática y programada, con delta", disposition: PENDIENTE}
+    - {id: ASR-06, requirement: "Reintentos con esperas incrementales y circuit breaker", disposition: PENDIENTE}
+    - {id: ASR-07, requirement: "Aviso «datos al …» si GitLab no responde", disposition: PENDIENTE}
+    - {id: ASR-08, requirement: "Logs de carga por siempre; la evaluación registra fecha, hora y usuario", disposition: PENDIENTE}
+    - {id: ASR-09, requirement: "Historiales con vigencia: rol/nivel, asignaciones, jefe de proyecto, «reporta a», membresía, valoraciones y evaluaciones", disposition: PENDIENTE}
+    - {id: ASR-10, requirement: "Restricciones garantizadas: suma de dedicación ≤ 100 %, un milestone por proyecto, una membresía y un jefe vigentes, evaluación obligatoria para promover, evidencias solo de issues cerrados", disposition: PENDIENTE}
+    - {id: ASR-11, requirement: "Registro de colaboradores alineado con el UDM (Party Management)", disposition: PENDIENTE}
+    - {id: ASR-14, requirement: "Tratamiento de datos personales (política pendiente)", disposition: PENDIENTE}
+    - {id: ASR-16, requirement: "MySQL 8.x, microservicios en Python con FastAPI", disposition: PENDIENTE}
+    - {id: ASR-17, requirement: "Parámetros y datos sensibles en Vault bajo `secret/p3m/*`", disposition: PENDIENTE}
+    - {id: ASR-18, requirement: "Protocolo de consumo seguro entre el BFF y los microservicios", disposition: PENDIENTE}
+    - {id: ASR-20, requirement: "Plataforma contenerizada", disposition: PENDIENTE}
+  adrs:
+    - {id: ADR-DB-001, decision: "El SSOT de un concepto se registra antes de modelar; el esquema no crea propiedad de negocio", status: "Aprobado por ianache el 2026-10-12 (sin revisión de arquitecto distinto)"}
+    - {id: ADR-DB-002, decision: "Cada contexto posee sus agregados y su persistencia; datos entre contextos por contratos, identificadores o ACL; sin tablas compartidas", status: "Aprobado por ianache el 2026-10-12 (sin revisión de arquitecto distinto)"}
+    - {id: ADR-DB-003, decision: "MySQL 8.x con charset y collation explícitos e índices; migraciones Flyway versionadas y observables; cambios destructivos solo con expand/contract o forward-fix aprobado", status: "Aprobado por ianache el 2026-10-12 (sin revisión de arquitecto distinto)"}
+    - {id: ADR-05, decision: "La base de datos es MySQL 8.x", status: "Aceptada"}
+    - {id: ADR-07, decision: "Microservicios en Python con FastAPI", status: "Aceptada"}
+    - {id: ADR-08, decision: "Integración con GitLab de solo lectura, con carga programada y delta", status: "Aceptada"}
+    - {id: ADR-09, decision: "Reintentos con esperas incrementales y circuit breaker", status: "Aceptada el patrón; parámetros propuestos"}
+    - {id: ADR-10, decision: "Modelo de personas y organizaciones alineado con el UDM", status: "Aceptada; la correspondencia concreta es propuesta"}
+    - {id: ADR-11, decision: "Identidad y roles de usuario gestionados en Keycloak; el portal guarda el GUID", status: "Aceptada; falta decidir si se actualiza en cada inicio (RQ-22)"}
+    - {id: ADR-12, decision: "Secretos y parámetros en HashiCorp Vault", status: "Aceptada; faltan rotación y autenticación (ADR-P11)"}
+    - {id: ADR-P2, decision: "Microservicios delimitados con DDD; REST seguro síncrono y RabbitMQ como único mensajero", status: "Aprobada por ianache el 2026-10-12 (sin revisión de arquitecto distinto)"}
+    - {id: ADR-P3, decision: "La carga de GitLab corre como proceso independiente con Celery Beat y workers", status: "Aprobada por ianache el 2026-10-12 (sin revisión de arquitecto distinto)"}
+    - {id: ADR-P6, decision: "Historial con vigencia y «una sola vigente» por índice único sobre columna calculada; la suma ≤ 100 % se valida en el servicio con bloqueo de filas", status: "Aprobada por ianache el 2026-10-12 (sin revisión de arquitecto distinto)"}
+    - {id: ADR-P9, decision: "El BFF obtiene un JWT de máquina con OAuth2 Client Credentials y lo presenta a los microservicios", status: "Aprobada por ianache el 2026-10-12 (sin revisión de arquitecto distinto)"}
+    - {id: ADR-P4, decision: "Tratamiento de datos personales: clasificación, cifrado, acceso y retención", status: "**Aprobada** por ianache el 2026-10-12: la decisión es retener los datos personales como los logs y aplazar la política (DT-01)"}
+    - {id: ADR-P5, decision: "Autorización por roles: guards en Angular y validación en servidor", status: "**Aprobada** por ianache el 2026-10-12: el BFF reenvía el token del usuario además del JWT de máquina; cada servicio comprueba rol más condición del recurso"}
+  rules:
+    - {id: ARCH-RULE-001, statement: "MUST: cada contexto tiene su propio esquema; no hay claves foráneas ni tablas compartidas entre esquemas; cada servicio accede solo a su esquema.", status: PROPOSED, severity: REQUIRED, sources: "ADR-DB-002, ADR-P2, INF-DEC-15; ASR-16", fitness: FIT-001}
+    - {id: ARCH-RULE-002, statement: "MUST: MySQL 8.x (mínimo 8.0.16), InnoDB, `utf8mb4` y `utf8mb4_0900_ai_ci` explícitos; `issue_url` y `web_url` con `utf8mb4_bin`; GUID de Keycloak en `ascii_bin`.", status: PROPOSED, severity: REQUIRED, sources: "ADR-DB-003, ADR-05; ASR-16", fitness: FIT-002}
+    - {id: ARCH-RULE-003, statement: "MUST: todo cambio de esquema es una migración Flyway versionada e inmutable (`validateOnMigrate=true`, `cleanDisabled=true`). Los cambios destructivos exigen expand/contract o forward-fix aprobado. Una migración aplicada no se edita.", status: PROPOSED, severity: REQUIRED, sources: "ADR-DB-003", fitness: FIT-003}
+    - {id: ARCH-RULE-004, statement: "MUST: los historiales con vigencia no se borran. «Una sola vigente» se garantiza con un índice único sobre una columna generada.", status: PROPOSED, severity: REQUIRED, sources: "ADR-P6; ASR-09, ASR-10", fitness: FIT-004}
+    - {id: ARCH-RULE-005, statement: "MUST: antes de sumar la dedicación de un colaborador, la transacción hace `INSERT IGNORE` y `SELECT … FOR UPDATE` sobre su fila de `colaborador_carga`, con cualquier nivel de aislamiento; reintenta ante el error 1213.", status: PROPOSED, severity: REQUIRED, sources: "ADR-P6; ASR-10 (PDM-001 F-15)", fitness: FIT-005}
+    - {id: ARCH-RULE-006, statement: "MUST: mínimo privilegio por tabla. Sin `DELETE` salvo en `rol_competencia`, `rol_nivel_competencia_minimo`, `proyecto_milestone`, `proyecto_rol_nivel_requerido` y `usuario_rol_de_usuario`. Sin `UPDATE` ni `DELETE` en las tablas de solo inserción. Sin `DELETE` en `carga_de_gitlab`.", status: PROPOSED, severity: REQUIRED, sources: "INF-DEC-15; ASR-08, ASR-09 (PDM-001 §5, D-H28)", fitness: FIT-006}
+    - {id: ARCH-RULE-007, statement: "MUST: toda conexión a MySQL usa SSL. Las contraseñas viven en Vault bajo `secret/p3m/*` y nunca en el repositorio, las imágenes ni las migraciones.", status: PROPOSED, severity: REQUIRED, sources: "ADR-12; ASR-17; INF-DEC-07, INF-DEC-14", fitness: FIT-007}
+    - {id: ARCH-RULE-008, statement: "MUST: entre contextos solo se intercambia por los contratos de ICP-001 (CON-01 a CON-13, EVT-01). Las referencias a otro contexto son `*_ref` sin clave foránea. MUST NOT leer tablas ajenas.", status: PROPOSED, severity: REQUIRED, sources: "ADR-DB-002, ADR-P2, ADR-P9; ASR-18", fitness: FIT-008}
+    - {id: ARCH-RULE-009, statement: "MUST: `PromocionDeNivelDecidida` viaja por RabbitMQ con outbox transaccional. El consumidor es idempotente por `promocion_ref` y descarta, registrando, los eventos con `decidida_en` no posterior a la vigencia actual de la plaza.", status: PROPOSED, severity: REQUIRED, sources: "ADR-P2; ASR-09 (ICP-001 EVT-01, K-42, K-46)", fitness: FIT-009}
+    - {id: ARCH-RULE-010, statement: "MUST: la réplica de GitLab es de solo lectura, la escribe solo el proceso de carga y solo guarda issues `UserStory` o `Task`. El proceso de carga ignora y registra los demás issues y MUST NOT fallar por ellos.", status: PROPOSED, severity: REQUIRED, sources: "ADR-08, ADR-P3, ADR-09; ASR-04 a ASR-08 (DT-03)", fitness: FIT-010}
+    - {id: ARCH-RULE-011, statement: "MUST: el usuario se vincula con la persona por el correo vigente, único entre las personas, la primera vez que inicia sesión. El vínculo se fija una sola vez; solo la cuenta de corrección lo cambia y deja registro de quién y cuándo. MUST NOT existir registro libre ni auto-registro de cuentas.", status: PROPOSED, severity: REQUIRED, sources: "ADR-11; ASR-03 (ICP-001 CON-13, BRC-001 BR-125, BR-128, BR-129)", fitness: FIT-011}
+    - {id: ARCH-RULE-012, statement: "MUST: los actores de las escrituras (`*_por_ref`) se guardan con el GUID de Keycloak (claim `sub`), sin consultar a Identidad. El `sub` sale del token del usuario que el BFF reenvía (ADR-P5).", status: PROPOSED, severity: REQUIRED, sources: "ADR-11 (ICP-001 D-H20); ADR-P5", fitness: FIT-012}
+    - {id: ARCH-RULE-013, statement: "MUST NOT: los contratos entre contextos y los eventos llevan datos personales. Solo identificadores, booleanos y niveles. Los registros de integración no contienen datos personales.", status: PROPOSED, severity: REQUIRED, sources: "ASR-14; ICP-001 P-5; ADR-P4 aprobada con el aplazamiento DT-01", fitness: FIT-013}
+    - {id: ARCH-RULE-014, statement: "MUST: el servicio implementa y prueba las restricciones que la base no garantiza: K-01, K-07, K-09, K-12, K-13, K-16, K-18, K-20, K-23, K-33 y K-34.", status: PROPOSED, severity: REQUIRED, sources: "ASR-10 (PDM-001 §3, §9)", fitness: FIT-014}
+    - {id: ARCH-RULE-015, statement: "SHOULD NOT: añadir particionado, desnormalización ni índices especulativos sin evidencia de carga real.", status: PROPOSED, severity: RECOMMENDED, sources: "PDM-001 F-11; LDM-001 §7 (D-H29)", fitness: FIT-015}
+    - {id: ARCH-RULE-016, statement: "MUST: los contratos internos se versionan (`/internal/v1`, `schema_version`), usan un JWT de máquina OAuth2 Client Credentials y evolucionan solo de forma aditiva dentro de una versión mayor.", status: PROPOSED, severity: REQUIRED, sources: "ADR-P9; ASR-18 (ICP-001 §5, §7)", fitness: FIT-016}
+  fitness_criteria:
+    - {id: FIT-001, rule: ARCH-RULE-001, description: "Ninguna FK cruza esquemas", type: AUTOMATED, evidence: "`python -I flyway/verify/analisis_estatico_ddl.py flyway` y postflight Q3", expected: "0 FK entre esquemas", current_state: "PASS (51 tablas, 46 FK, 0 entre esquemas)"}
+    - {id: FIT-002, rule: ARCH-RULE-002, description: "Todas las tablas son InnoDB y `utf8mb4_0900_ai_ci`", type: AUTOMATED, evidence: "Postflight Q1 (`flyway/verify/preflight_postflight.sql`)", expected: "0 tablas fuera de la norma", current_state: "PASS"}
+    - {id: FIT-003, rule: ARCH-RULE-003, description: "Migraciones válidas, inmutables y sin cambios destructivos no aprobados", type: HYBRID, evidence: "`flyway migrate` con `validateOnMigrate=true`; checksums de PDM-001 §6; revisión humana de todo `DROP`, `RENAME` o `ALTER` destructivo", expected: "Checksums iguales; sin migración fallida", current_state: "PASS (8 migraciones, checksums coinciden)"}
+    - {id: FIT-004, rule: ARCH-RULE-004, description: "«Una sola vigente» y no borrado de historiales", type: AUTOMATED, evidence: "`flyway/verify/pruebas_restricciones.sh` (111 pruebas) y postflight Q6 (7 índices)", expected: "111 de 111; 7 índices únicos", current_state: "PASS"}
+    - {id: FIT-005, rule: ARCH-RULE-005, description: "Suma de dedicación ≤ 100 % bajo concurrencia", type: HYBRID, evidence: "`ciclo_completo.sh` (K-31 con `svc_portafolio`, `READ COMMITTED` y `REPEATABLE READ`); prueba del servicio", expected: "Suma 60 % y 0 interbloqueos en ambos niveles", current_state: "PASS en la base; prueba del servicio NOT_VERIFIABLE"}
+    - {id: FIT-006, rule: ARCH-RULE-006, description: "Permisos por tabla conformes a la política", type: AUTOMATED, evidence: "Postflight Q9 y 18 pruebas de permisos de `ciclo_completo.sh`", expected: "0 permisos fuera de política", current_state: "PASS"}
+    - {id: FIT-007, rule: ARCH-RULE-007, description: "SSL obligatorio y secretos fuera del repositorio", type: HYBRID, evidence: "Prueba «conexión sin SSL rechazada»; escaneo de secretos en el pipeline", expected: "Conexión sin SSL rechazada; ningún secreto en el repositorio", current_state: "PASS el SSL; el escaneo de secretos es NOT_VERIFIABLE (no hay pipeline)"}
+    - {id: FIT-008, rule: ARCH-RULE-008, description: "Sin acceso entre contextos fuera de los contratos", type: HYBRID, evidence: "Prueba de permisos entre esquemas; pruebas de contrato por cada CON-xx", expected: "El servicio de un contexto no lee otro esquema; cada contrato cumple su esquema", current_state: "PASS los permisos; las pruebas de contrato son NOT_VERIFIABLE"}
+    - {id: FIT-009, rule: ARCH-RULE-009, description: "EVT-01 idempotente y sin eventos obsoletos", type: HYBRID, evidence: "Pruebas SQL de K-42 y K-46 (4 pruebas); pruebas del consumidor", expected: "Un evento repetido o antiguo no modifica la plaza", current_state: "PASS en SQL; el consumidor es NOT_VERIFIABLE"}
+    - {id: FIT-010, rule: ARCH-RULE-010, description: "Réplica de GitLab de solo lectura y carga tolerante", type: HYBRID, evidence: "Prueba «svc_gitlab no inserta réplicas»; prueba del proceso de carga con un issue de otro tipo", expected: "La carga completa sin fallar y registra lo ignorado", current_state: "PASS los permisos; el proceso de carga es NOT_VERIFIABLE"}
+    - {id: FIT-011, rule: ARCH-RULE-011, description: "Vínculo inmutable y sin auto-registro", type: HYBRID, evidence: "Pruebas de permisos por columna sobre `usuario.persona_ref` y de K-43, K-44, K-45; prueba del flujo de login con CON-13", expected: "Solo la cuenta de corrección cambia el vínculo", current_state: "PASS en la base; el flujo de login es NOT_VERIFIABLE"}
+    - {id: FIT-012, rule: ARCH-RULE-012, description: "Columnas de actor con el GUID de Keycloak", type: AUTOMATED, evidence: "Consulta a `information_schema.columns`: las columnas `*_por_ref` de actor son `CHAR(36)` `ascii_bin`. **La consulta no existe todavía y debe escribirse**", expected: "Todas conformes", current_state: "NOT_VERIFIABLE (por escribir)"}
+    - {id: FIT-013, rule: ARCH-RULE-013, description: "Contratos y eventos sin datos personales", type: HYBRID, evidence: "Prueba de contrato con lista blanca de campos; revisión de los registros de integración", expected: "Ningún campo personal en los mensajes", current_state: "NOT_VERIFIABLE (no existen los servicios)"}
+    - {id: FIT-014, rule: ARCH-RULE-014, description: "Restricciones del servicio probadas", type: AUTOMATED, evidence: "Una prueba por cada K de la regla, en el servicio", expected: "Todas pasan", current_state: "NOT_VERIFIABLE (no existen los servicios)"}
+    - {id: FIT-015, rule: ARCH-RULE-015, description: "Sin particionado ni desnormalización sin evidencia", type: MANUAL, evidence: "Revisión del Merge Request", expected: "Sin cambios de ese tipo no justificados", current_state: "NOT_APPLICABLE por ahora"}
+    - {id: FIT-016, rule: ARCH-RULE-016, description: "Contratos versionados y autenticados", type: HYBRID, evidence: "Pruebas de contrato y de autenticación con JWT de máquina", expected: "Rutas `/internal/v1`, `schema_version` y token válido", current_state: "NOT_VERIFIABLE (no existen los servicios)"}
+contracts:
+  api:
+    - {id: CON-01, name: PersonaConRolVigente, direction: "CTX-01 → CTX-04, CTX-06"}
+    - {id: CON-02, name: RolNivelVigenteDePersona, direction: "CTX-01 → CTX-05"}
+    - {id: CON-03, name: RolNivelExiste, direction: "CTX-03 → CTX-01, CTX-05, CTX-06"}
+    - {id: CON-04, name: NivelesMinimosDeRolNivel, direction: "CTX-03 → CTX-06"}
+    - {id: CON-05, name: CompetenciaExiste, direction: "CTX-03 → CTX-04, CTX-05"}
+    - {id: CON-06, name: EvidenciasObligatoriasValidadas, direction: "CTX-05 → CTX-04"}
+    - {id: CON-07, name: NivelActualDeCompetencias, direction: "CTX-05 → CTX-06"}
+    - {id: CON-08, name: CertificacionExiste, direction: "CTX-04 → CTX-05"}
+    - {id: CON-09, name: EsJefeVigenteDeProyectoDelMilestone, direction: "CTX-06 → CTX-05"}
+    - {id: CON-10, name: IssueCerrado, direction: "CTX-07 → CTX-05"}
+    - {id: CON-11, name: MilestoneExiste, direction: "CTX-07 → CTX-06"}
+    - {id: CON-12, name: EvidenciaEsperadaDeEnrolamiento, direction: "CTX-04 → CTX-05"}
+    - {id: CON-13, name: PersonaPorCorreo, direction: "CTX-01 → CTX-02"}
+  events:
+    - {id: EVT-01, name: PromocionDeNivelDecidida, version: 1, provider: CTX-05, consumer: CTX-01, transport: RabbitMQ, outbox: true}
+  data:
+    - {schema: p3m_partes, migration: V1__baseline_partes.sql, expected_checksum: 1242511565}
+    - {schema: p3m_identidad, migration: V1__baseline_identidad.sql, expected_checksum: 1916221164}
+    - {schema: p3m_curricula, migration: V1__baseline_curricula.sql, expected_checksum: 641202384}
+    - {schema: p3m_curricula, migration: V2__seed_seniority_niveles.sql, expected_checksum: -75542515}
+    - {schema: p3m_formacion, migration: V1__baseline_formacion.sql, expected_checksum: 1941176407}
+    - {schema: p3m_progresion, migration: V1__baseline_progresion.sql, expected_checksum: -1388612769}
+    - {schema: p3m_portafolio, migration: V1__baseline_portafolio.sql, expected_checksum: -1868510700}
+    - {schema: p3m_gitlab, migration: V1__baseline_gitlab.sql, expected_checksum: 1057650316}
+quality:
+  nfrs:
+    - {id: NFR-01, statement: "Disponibilidad 99,9 % en fallas normales; RTO 4 h y RPO 1 h con respaldos horarios en desastre (INF-DEC-23).", classification: "FACT (INF-Q02, 2026-10-10)"}
+    - {id: NFR-02, statement: "Más de 50 colaboradores; resto de la carga desconocido.", classification: "FACT parcial (INF-Q03); resto UNKNOWN"}
+    - {id: NFR-03, statement: "Retención por siempre de los logs de carga y de los datos personales.", classification: "FACT (BR-090, BR-101)"}
+    - {id: NFR-04, statement: "Tiempos en UTC (`DATETIME(3)`); la presentación en UTC-05 es del cliente (BR-092).", classification: "FACT"}
+    - {id: NFR-05, statement: "Zona horaria del servidor `+00:00`, modo SQL estricto, versión mínima 8.0.16.", classification: "FACT (PDM-001 §6, preflight)"}
+security:
+  constraints:
+    - {id: SEC-01, constraint: "Todas las cuentas MySQL exigen SSL; los hosts `%` se restringen a la red de los servicios al desplegar.", source: "PDM-001 §5; INF-DEC-07"}
+    - {id: SEC-02, constraint: "Mínimo privilegio por tabla y por columna (`persona_ref`); ningún servicio lee otro esquema.", source: "PDM-001 §5; INF-DEC-15"}
+    - {id: SEC-03, constraint: "Contraseñas en Vault bajo `secret/p3m/*`; los scripts usan marcadores y nunca se escriben valores.", source: "ADR-12; INF-DEC-14"}
+    - {id: SEC-04, constraint: "No hay registro libre ni auto-registro; las identidades vienen de Active Directory vía Keycloak y el correo es de solo lectura. Es un requisito de despliegue: si cambia, vuelve el riesgo de suplantación (RPT-DDR-001 R-01).", source: "INF-DEC-22; BRC-001 BR-128"}
+    - {id: SEC-05, constraint: "Las llamadas internas usan un JWT de máquina OAuth2 Client Credentials; las rutas `/internal/…` no se publican en el API Gateway.", source: "ADR-P9; ICP-001 §5"}
+    - {id: SEC-06, constraint: "Los mensajes entre contextos no llevan datos personales; los registros de integración tampoco.", source: "ICP-001 P-5"}
+    - {id: SEC-07, constraint: "Los datos personales se retienen por siempre y no hay mecanismo de borrado; la clasificación y el cifrado de columna están diferidos (DT-01). **No debilitar los controles que ya existen.**", source: "BR-101; ADR-P4 aprobada con el aplazamiento DT-01"}
+    - {id: SEC-08, constraint: "Una URL de issue solo se acepta bajo la URL base de GitLab configurada en Vault.", source: "ICP-001 §2.3 (ACL-02)"}
+open_items:
+  - {id: OI-01, type: OPEN_DECISION, description: "**Resuelto en parte.** ianache aprobó el 2026-10-12 ADR-P2, P3, P6, P7, P9 y ADR-DB-001/002/003, en su rol de responsable funcional. **ADR-P5 no se aprobó** (OI-04, OI-18). No consta la revisión de un arquitecto distinto. Las reglas ARCH-RULE siguen en `PROPOSED` hasta que el Solution Architect las apruebe.", blocking: "No", owner: "Solution Architect"}
+  - {id: OI-02, type: MISSING_EVIDENCE, description: "Los 20 ASR tienen disposición humana PENDIENTE. Ninguno está clasificado como `CANDIDATE`, `REJECT` o `INVESTIGATE`.", blocking: "No", owner: "Solution Architect"}
+  - {id: OI-03, type: OPEN_DECISION, description: "ADR-P4 (datos personales) fue **aprobada el 2026-10-12** y su decisión es aplazar la política (DT-01): sin clasificación, cifrado de columna, acceso ni borrado a solicitud del titular; los datos personales se retienen por siempre (BR-101). **Seguridad aceptó el aplazamiento (DT-01)** según ianache el 2026-10-12; no consta el nombre del aceptante ni una referencia.", blocking: "No para el esquema. Sí antes de producción decidir ADR-P4", owner: "Seguridad y responsable funcional"}
+  - {id: OI-04, type: FACT, description: "**RESUELTO el 2026-10-12:** ianache respondió P5-D1 a P5-D7 y aprobó ADR-P5 (con su anexo). Antes: ADR-P5: el mapa rol-permiso está **propuesto** en `ADR-P5-anexo-mapa-rol-permiso-propuesta.md` y **no aprobado**. Hay 7 decisiones pendientes (P5-D1 a P5-D7). Los permisos de negocio (BR-002, BR-005, BR-055, BR-109 y otros) los aplica el servicio.", blocking: "No para el esquema. Sí para la capa de servicios", owner: "Arquitectura y responsable funcional"}
+  - {id: OI-05, type: OPEN_DECISION, description: "Alojamiento y modo de alta disponibilidad de MySQL: ¿servicio gestionado o contenedor?, ¿replicación semisíncrona o de grupo? (INF-DEC-11). INF-DEC-23 exige conmutación en minutos.", blocking: "No para las migraciones. Sí antes de producción", owner: "Arquitectura e infraestructura"}
+  - {id: OI-06, type: MISSING_EVIDENCE, description: "La recuperación de MySQL no está verificada: sin conmutación ni restauración de prueba contra 99,9 % / RTO 4 h / RPO 1 h. **Aceptado como deuda técnica DT-04** (D-H39), confirmado por ianache el 2026-10-12 (D-H43).", blocking: "No", owner: "Infraestructura"}
+  - {id: OI-07, type: UNKNOWN, description: "Carga parcial: más de 50 colaboradores. Faltan usuarios concurrentes, volumen de issues, crecimiento e IOPS (DT-02). Los índices cubren solo restricciones y consultas de contrato.", blocking: "No", owner: "Arquitectura"}
+  - {id: OI-08, type: OPEN_DECISION, description: "Issues de tipo «Proyecto» (BR-039) y campos que BR-038 manda mostrar (esfuerzo estimado, esfuerzo gastado, fecha de vencimiento): la réplica no los guarda (DT-03).", blocking: "No", owner: "Jefe de Ingeniería"}
+  - {id: OI-09, type: ASSUMPTION, description: "Ningún ambiente aplicó los `V1` anteriores de `p3m_partes`, `p3m_identidad` y `p3m_portafolio`. El responsable aprobó F-18 sin confirmarlo expresamente.", blocking: "No", owner: "Responsable funcional"}
+  - {id: OI-10, type: STALE_EVIDENCE, description: "**Resuelto en parte.** IMD-001, BRC-001, RCP-001 y las seis historias actualizadas fueron **verificadas por ianache el 2026-10-12** (D-H41). Siguen desfasados los issues de GitLab #17, #19 y #21 y TRC-SSP-001, que reflejan la versión anterior de las historias. Las historias US-029 a US-035 son nuevas y están en `draft`.", blocking: "No", owner: "Análisis funcional"}
+  - {id: OI-11, type: UNKNOWN, description: "**Resuelto en parte.** Se redactaron el 2026-10-12 las historias US-029 (contactos), US-030 (plazas), US-031 (ocupaciones), US-032 (roles de la parte), US-033 (corrección de vínculo) y US-034 (relaciones). Cinco están CONDITIONAL y una READY; todas en `draft`. **Se redactó después US-035 para el registro de las organizaciones** (BR-072).", blocking: "No", owner: "Análisis funcional"}
+  - {id: OI-12, type: ASSUMPTION, description: "Se asume un servicio por contexto (7). ADR-P2 dice que falta enumerar los servicios; DDM-001 enumera contextos, no servicios.", blocking: "No", owner: "Arquitectura"}
+  - {id: OI-13, type: OPEN_DECISION, description: "Parámetros operativos de los contratos internos (tiempos de espera, circuit breaker, reintentos). ADR-09 solo propone parámetros para GitLab.", blocking: "No para el esquema. Sí para los servicios", owner: "Infraestructura"}
+  - {id: OI-14, type: UNKNOWN, description: "Preguntas abiertas de las historias que afectan a la implementación: US-010-Q2 (el desenrolamiento y el registro), US-025-Q1 y US-025-Q2 (datos que no entrega Keycloak; correo ya vinculado), RQ-32 (permiso del jefe de proyecto), RQ-33 (roles de la parte simultáneos), RQ-22 (actualizar el usuario en cada inicio).", blocking: "No", owner: "Jefe de Ingeniería"}
+  - {id: OI-15, type: UNKNOWN, description: "INF-Q17: cómo se federa Keycloak con Active Directory y qué pasa si no responde. Afecta al ingreso (US-025, US-027).", blocking: "No", owner: "Infraestructura y seguridad"}
+  - {id: OI-16, type: CONFLICT, description: "INF-P3M-001 mantiene INF-DEC-02 como «PENDIENTE» (plataforma de contenedores) mientras ADR-P7 decide Docker local y Kubernetes en Oracle OKE. Queda por confirmar si DEV también va en OKE.", blocking: "No", owner: "Arquitectura"}
+  - {id: OI-17, type: OPEN_DECISION, description: "Fuera de este alcance: US-027 y US-028 (ingreso y cierre de sesión) no usan la base de datos; los resuelven el BFF y Keycloak.", blocking: "No", owner: "Arquitectura"}
+  - {id: OI-18, type: FACT, description: "**RESUELTO el 2026-10-12 (P5-D1 = A):** el BFF reenvía el token del usuario además del JWT de máquina y cada servicio lo valida contra Keycloak; ADR-P9 no cambia. Antes: ADR-P5 dice que cada microservicio valida el rol del usuario; ADR-P9 (aprobado) hace que el BFF llame con un JWT de máquina, no el del usuario. El servicio no recibe la identidad ni los roles del usuario, ni el GUID del actor que exige ARCH-RULE-012. Opciones y recomendación en el anexo de ADR-P5 (G-1).", blocking: "No para el esquema. **Sí para implementar los servicios**", owner: "Arquitectura y responsable funcional"}
+  - {id: OI-19, type: FACT, description: "RESUELTO el 2026-10-12 (D-160, BR-131: toda parte tiene contactos; F-19). Faltan tipos y obligatoriedad para organizaciones (RQ-36). Antes: BR-121 y D-150 dicen que solo las personas tienen contactos; el responsable indicó el 2026-10-12 «contactos de las Party (Person u Organization)». Afecta a `dato_de_contacto`, que hoy solo se relaciona con `persona`.", blocking: "Parcial: bloquea la parte de organizaciones de US-029 y un posible cambio del esquema", owner: "Jefe de Ingeniería"}
+  - {id: OI-20, type: FACT, description: "**RESUELTO el 2026-10-12 (D-166, BR-135):** los mantienen el Jefe de Ingeniería y el ADMIN. Antes: Ninguna regla dice quién mantiene los contactos, plazas, ocupaciones, roles de la parte y relaciones. Las historias lo asumen como hipótesis (Jefe de Ingeniería o ADMIN, por analogía con BR-002).", blocking: "No para el esquema", owner: "Jefe de Ingeniería"}
+  - {id: OI-21, type: ASSUMPTION, description: "Los nombres de rol de Keycloak (ADMIN, COLABORADOR, INSTRUCTOR, JEFE_INGENIERIA) son un supuesto del responsable (D-164); no se contrastaron con la configuración real de Keycloak. El DDL (`ck_usuario_rol`) y ACL-01 ya los usan.", blocking: "No para el esquema. Sí para implementar los servicios", owner: "Infraestructura / responsable funcional"}
+  - {id: OI-22, type: STALE_EVIDENCE, description: "BR-134 (D-165): el ADMIN suple las seis capacidades exclusivas del Jefe de Ingeniería. Las historias aprobadas US-002, US-003, US-006, US-007, US-008, US-017, US-021, US-022 y US-026 aún dicen «solo el Jefe de Ingeniería». Cambiarlas devuelve a `draft` lo verificado.", blocking: "No para el esquema", owner: "Jefe de Ingeniería"}
+traceability:
+  - {us: US-001, asr: ["ASR-16"], adr: ["ADR-05", "ADR-DB-001", "ADR-DB-002", "ADR-DB-003"], rules: ["ARCH-RULE-001", "ARCH-RULE-002", "ARCH-RULE-003", "ARCH-RULE-006", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-002", "FIT-003", "FIT-006", "FIT-014"]}
+  - {us: US-002, asr: ["ASR-16"], adr: ["ADR-05", "ADR-DB-001", "ADR-DB-002", "ADR-DB-003"], rules: ["ARCH-RULE-001", "ARCH-RULE-002", "ARCH-RULE-003", "ARCH-RULE-006", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-002", "FIT-003", "FIT-006", "FIT-014"]}
+  - {us: US-003, asr: ["ASR-16"], adr: ["ADR-05", "ADR-DB-001", "ADR-DB-002", "ADR-DB-003"], rules: ["ARCH-RULE-001", "ARCH-RULE-002", "ARCH-RULE-003", "ARCH-RULE-006", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-002", "FIT-003", "FIT-006", "FIT-014"]}
+  - {us: US-004, asr: ["ASR-09", "ASR-11", "ASR-14", "ASR-16"], adr: ["ADR-05", "ADR-10", "ADR-P6", "ADR-P4"], rules: ["ARCH-RULE-001", "ARCH-RULE-002", "ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-013", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-002", "FIT-004", "FIT-006", "FIT-013", "FIT-014"]}
+  - {us: US-005, asr: ["ASR-09", "ASR-11", "ASR-14", "ASR-16"], adr: ["ADR-05", "ADR-10", "ADR-P6", "ADR-P4"], rules: ["ARCH-RULE-001", "ARCH-RULE-002", "ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-013", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-002", "FIT-004", "FIT-006", "FIT-013", "FIT-014"]}
+  - {us: US-006, asr: ["ASR-16"], adr: ["ADR-05", "ADR-P2", "ADR-DB-002"], rules: ["ARCH-RULE-001", "ARCH-RULE-002", "ARCH-RULE-003", "ARCH-RULE-006", "ARCH-RULE-008", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-002", "FIT-003", "FIT-006", "FIT-008", "FIT-014"]}
+  - {us: US-007, asr: ["ASR-16"], adr: ["ADR-05", "ADR-P2", "ADR-DB-002"], rules: ["ARCH-RULE-001", "ARCH-RULE-002", "ARCH-RULE-003", "ARCH-RULE-006", "ARCH-RULE-008", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-002", "FIT-003", "FIT-006", "FIT-008", "FIT-014"]}
+  - {us: US-008, asr: ["ASR-16"], adr: ["ADR-05", "ADR-P2", "ADR-DB-002"], rules: ["ARCH-RULE-001", "ARCH-RULE-002", "ARCH-RULE-003", "ARCH-RULE-006", "ARCH-RULE-008", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-002", "FIT-003", "FIT-006", "FIT-008", "FIT-014"]}
+  - {us: US-009, asr: ["ASR-10", "ASR-16"], adr: ["ADR-05", "ADR-P2", "ADR-P6"], rules: ["ARCH-RULE-001", "ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-004", "FIT-006", "FIT-014"]}
+  - {us: US-010, asr: ["ASR-10", "ASR-16"], adr: ["ADR-05", "ADR-P2", "ADR-P6"], rules: ["ARCH-RULE-001", "ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-004", "FIT-006", "FIT-014"]}
+  - {us: US-011, asr: ["ASR-10", "ASR-16"], adr: ["ADR-P2", "ADR-P9", "ADR-DB-002"], rules: ["ARCH-RULE-008", "ARCH-RULE-013", "ARCH-RULE-014", "ARCH-RULE-016"], fitness: ["FIT-008", "FIT-013", "FIT-014", "FIT-016"]}
+  - {us: US-012, asr: ["ASR-10", "ASR-16"], adr: ["ADR-P2", "ADR-P9", "ADR-DB-002"], rules: ["ARCH-RULE-008", "ARCH-RULE-013", "ARCH-RULE-014", "ARCH-RULE-016"], fitness: ["FIT-008", "FIT-013", "FIT-014", "FIT-016"]}
+  - {us: US-013, asr: ["ASR-04", "ASR-05", "ASR-10"], adr: ["ADR-08", "ADR-P2", "ADR-P9"], rules: ["ARCH-RULE-006", "ARCH-RULE-008", "ARCH-RULE-010", "ARCH-RULE-013", "ARCH-RULE-014", "ARCH-RULE-016"], fitness: ["FIT-006", "FIT-008", "FIT-010", "FIT-013", "FIT-014", "FIT-016"]}
+  - {us: US-014, asr: ["ASR-04", "ASR-05", "ASR-10"], adr: ["ADR-08", "ADR-P2", "ADR-P9"], rules: ["ARCH-RULE-006", "ARCH-RULE-008", "ARCH-RULE-010", "ARCH-RULE-013", "ARCH-RULE-014", "ARCH-RULE-016"], fitness: ["FIT-006", "FIT-008", "FIT-010", "FIT-013", "FIT-014", "FIT-016"]}
+  - {us: US-015, asr: ["ASR-04", "ASR-05", "ASR-10"], adr: ["ADR-08", "ADR-P2", "ADR-P9"], rules: ["ARCH-RULE-006", "ARCH-RULE-008", "ARCH-RULE-010", "ARCH-RULE-013", "ARCH-RULE-014", "ARCH-RULE-016"], fitness: ["FIT-006", "FIT-008", "FIT-010", "FIT-013", "FIT-014", "FIT-016"]}
+  - {us: US-016, asr: ["ASR-09", "ASR-14"], adr: ["ADR-P6", "ADR-P4"], rules: ["ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-012", "ARCH-RULE-013"], fitness: ["FIT-004", "FIT-006", "FIT-012", "FIT-013"]}
+  - {us: US-017, asr: ["ASR-09", "ASR-10", "ASR-14"], adr: ["ADR-P2", "ADR-P6", "ADR-P4"], rules: ["ARCH-RULE-004", "ARCH-RULE-008", "ARCH-RULE-009", "ARCH-RULE-012", "ARCH-RULE-013", "ARCH-RULE-014"], fitness: ["FIT-004", "FIT-008", "FIT-009", "FIT-012", "FIT-013", "FIT-014"]}
+  - {us: US-018, asr: ["ASR-09", "ASR-10"], adr: ["ADR-05", "ADR-P6"], rules: ["ARCH-RULE-001", "ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-004", "FIT-006", "FIT-014"]}
+  - {us: US-019, asr: ["ASR-09", "ASR-10"], adr: ["ADR-05", "ADR-P6"], rules: ["ARCH-RULE-001", "ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-004", "FIT-006", "FIT-014"]}
+  - {us: US-020, asr: ["ASR-04", "ASR-05", "ASR-06", "ASR-07", "ASR-08"], adr: ["ADR-08", "ADR-09", "ADR-P3", "ADR-12"], rules: ["ARCH-RULE-006", "ARCH-RULE-007", "ARCH-RULE-010"], fitness: ["FIT-006", "FIT-007", "FIT-010"]}
+  - {us: US-021, asr: ["ASR-09", "ASR-10"], adr: ["ADR-P6", "ADR-P9"], rules: ["ARCH-RULE-004", "ARCH-RULE-005", "ARCH-RULE-006", "ARCH-RULE-008", "ARCH-RULE-012", "ARCH-RULE-014"], fitness: ["FIT-004", "FIT-005", "FIT-006", "FIT-008", "FIT-012", "FIT-014"]}
+  - {us: US-022, asr: ["ASR-09", "ASR-10"], adr: ["ADR-P6", "ADR-P9"], rules: ["ARCH-RULE-004", "ARCH-RULE-005", "ARCH-RULE-006", "ARCH-RULE-008", "ARCH-RULE-012", "ARCH-RULE-014"], fitness: ["FIT-004", "FIT-005", "FIT-006", "FIT-008", "FIT-012", "FIT-014"]}
+  - {us: US-023, asr: ["ASR-09", "ASR-10"], adr: ["ADR-P6", "ADR-P9"], rules: ["ARCH-RULE-004", "ARCH-RULE-005", "ARCH-RULE-006", "ARCH-RULE-008", "ARCH-RULE-012", "ARCH-RULE-014"], fitness: ["FIT-004", "FIT-005", "FIT-006", "FIT-008", "FIT-012", "FIT-014"]}
+  - {us: US-024, asr: ["ASR-04", "ASR-05", "ASR-06", "ASR-07", "ASR-08"], adr: ["ADR-08", "ADR-09", "ADR-P3", "ADR-12"], rules: ["ARCH-RULE-006", "ARCH-RULE-007", "ARCH-RULE-010"], fitness: ["FIT-006", "FIT-007", "FIT-010"]}
+  - {us: US-025, asr: ["ASR-03", "ASR-14"], adr: ["ADR-11", "ADR-P5", "ADR-12"], rules: ["ARCH-RULE-007", "ARCH-RULE-008", "ARCH-RULE-011", "ARCH-RULE-012", "ARCH-RULE-013"], fitness: ["FIT-007", "FIT-008", "FIT-011", "FIT-012", "FIT-013"]}
+  - {us: US-026, asr: ["ASR-08", "ASR-09", "ASR-14"], adr: ["ADR-P6", "ADR-P4"], rules: ["ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-012", "ARCH-RULE-013"], fitness: ["FIT-004", "FIT-006", "FIT-012", "FIT-013"]}
+  - {us: US-029, asr: ["ASR-11", "ASR-14", "ASR-16"], adr: ["ADR-10", "ADR-P6", "ADR-P4", "ADR-DB-002"], rules: ["ARCH-RULE-001", "ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-013", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-004", "FIT-006", "FIT-013", "FIT-014"]}
+  - {us: US-030, asr: ["ASR-09", "ASR-11", "ASR-16"], adr: ["ADR-10", "ADR-P6", "ADR-DB-002"], rules: ["ARCH-RULE-001", "ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-009", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-004", "FIT-006", "FIT-009", "FIT-014"]}
+  - {us: US-031, asr: ["ASR-09", "ASR-11", "ASR-16"], adr: ["ADR-10", "ADR-P6", "ADR-DB-002"], rules: ["ARCH-RULE-001", "ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-009", "ARCH-RULE-014"], fitness: ["FIT-001", "FIT-004", "FIT-006", "FIT-009", "FIT-014"]}
+  - {us: US-032, asr: ["ASR-09", "ASR-10", "ASR-11"], adr: ["ADR-10", "ADR-P6"], rules: ["ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-014"], fitness: ["FIT-004", "FIT-006", "FIT-014"]}
+  - {us: US-033, asr: ["ASR-03", "ASR-14"], adr: ["ADR-11", "ADR-P5"], rules: ["ARCH-RULE-006", "ARCH-RULE-011", "ARCH-RULE-012", "ARCH-RULE-013"], fitness: ["FIT-006", "FIT-011", "FIT-012", "FIT-013"]}
+  - {us: US-034, asr: ["ASR-09", "ASR-10", "ASR-11"], adr: ["ADR-10", "ADR-P6"], rules: ["ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-014"], fitness: ["FIT-004", "FIT-006", "FIT-014"]}
+  - {us: US-035, asr: ["ASR-09", "ASR-10", "ASR-11"], adr: ["ADR-10", "ADR-P6"], rules: ["ARCH-RULE-004", "ARCH-RULE-006", "ARCH-RULE-014"], fitness: ["FIT-004", "FIT-006", "FIT-014"]}
+handoff_readiness:
+  recommendation: READY_WITH_OBSERVATIONS
+  blocking_findings: []
+  observations: [OI-01, OI-02, OI-03, OI-04, OI-05, OI-06, OI-07, OI-08, OI-09, OI-10, OI-11, OI-12, OI-13, OI-14, OI-15, OI-16, OI-17, OI-18, OI-19, OI-20, OI-21, OI-22]
+human_decision_gate:
+  status: PENDING
+  decision: null
+  role: Solution Architect
+superpowers:
+  enabled: true
+  architecture_constraints_are_immutable: true
+  escalation_on_conflict: true
+knowledge:
+  context_policy: minimum_context_plus_pull
+  provenance_required: true
