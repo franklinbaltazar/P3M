@@ -53,15 +53,15 @@ GRANT SELECT, INSERT, UPDATE ON p3m_partes.plaza_rol_nivel TO 'svc_partes'@'%';
 GRANT SELECT, INSERT, UPDATE ON p3m_partes.ocupacion_de_plaza TO 'svc_partes'@'%';
 
 -- ===== p3m_portafolio =====
-GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.producto TO 'svc_portafolio'@'%';
-GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.proyecto TO 'svc_portafolio'@'%';
-GRANT SELECT, INSERT, UPDATE, DELETE ON p3m_portafolio.proyecto_milestone TO 'svc_portafolio'@'%';  -- tabla de configuración o copia
-GRANT SELECT, INSERT, UPDATE, DELETE ON p3m_portafolio.proyecto_rol_nivel_requerido TO 'svc_portafolio'@'%';  -- tabla de configuración o copia
-GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.jefatura_de_proyecto TO 'svc_portafolio'@'%';
-GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.motivo_de_excepcion TO 'svc_portafolio'@'%';
-GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.colaborador_carga TO 'svc_portafolio'@'%';
-GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.asignacion TO 'svc_portafolio'@'%';
-GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.excepcion_de_asignacion TO 'svc_portafolio'@'%';
+GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.tb_producto TO 'svc_portafolio'@'%';
+GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.tb_proyecto TO 'svc_portafolio'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE ON p3m_portafolio.tb_proyecto_milestone TO 'svc_portafolio'@'%';  -- tabla de configuración o copia
+GRANT SELECT, INSERT, UPDATE, DELETE ON p3m_portafolio.tb_proyecto_rol_nivel_requerido TO 'svc_portafolio'@'%';  -- tabla de configuración o copia
+GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.tb_jefatura_de_proyecto TO 'svc_portafolio'@'%';
+GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.tb_motivo_de_excepcion TO 'svc_portafolio'@'%';
+GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.tb_colaborador_carga TO 'svc_portafolio'@'%';
+GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.tb_asignacion TO 'svc_portafolio'@'%';
+GRANT SELECT, INSERT, UPDATE ON p3m_portafolio.tb_excepcion_de_asignacion TO 'svc_portafolio'@'%';
 
 -- ===== p3m_progresion =====
 GRANT SELECT, INSERT, UPDATE ON p3m_progresion.solicitud_de_promocion TO 'svc_progresion'@'%';
